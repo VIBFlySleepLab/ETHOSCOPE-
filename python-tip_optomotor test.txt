@@ -1,0 +1,40 @@
+import logging
+import time
+import serial
+import os
+from serial.tools import list_ports
+
+_baud = 115200
+_n_channels = 24
+
+all_port_tuples = list_ports.comports()
+logging.info("listing serial ports")
+all_ports = set()
+
+for ap, _, _ in all_port_tuples:
+	p = os.path.basename(ap)
+        print(p)
+        if p.startswith("ttyUSB") or p.startswith("ttyACM"):
+        	all_ports |= {ap}
+		print(len(all_ports))
+
+_port =  all_ports.pop()
+
+_serial = serial.Serial(_port, _baud, timeout =2)
+
+duration = 10000
+intensity = 1000
+channel = 3
+
+instruction = "P %i %i %i\r" %(channel, duration, intensity)
+
+o = _serial.write(instruction)
+
+for i in range(0, 23):
+	channel = i
+	duration = 1000
+	intensity = 1000
+	instruction = "P %i %i %i\r" %(channel, duration, intensity)
+	_serial.write(instruction)
+	time.sleep(0.1)
+
