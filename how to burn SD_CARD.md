@@ -2,7 +2,7 @@ Create your SD card using an image file   .img
 =======================
 
 SD card model = SAMSUNG EVO 32 GB
-file used for image.  20160427_ethoscope.img  **using usb flash to copy this file to desktop**
+file used for image.  20180530_ethoscope.img  **using usb flash to copy this file to desktop**
 
 in terminal : 
 [node@node ~]$ `su` # as  super user 
@@ -11,7 +11,8 @@ password `node`    **current password**
 find the name of sd card: in this case it is **sda**  **very careful with dd. You want to write on the write drive!**
 [root@node node]# `dd if=/home/node/Desktop/20160427_ethoscope.img of=/dev/sda bs=64K`.
 		``dd if=/home/node/Desktop/20180530_ethoscope.img of=/dev/sda bs=64K``
-enter wait
+Enter
+waiting
 finsh
 
 
