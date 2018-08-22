@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: ethoscope-node
+Version: trunk
+Summary: todo
+Home-page: https://github.com/gilestrolab/ethoscope
+Author: ['Quentin Geissmann', 'Giorgio Gilestro', 'Luis Garcia']
+Author-email: ['quentin.geissmann13@imperial.ac.uk', 'g.gilestro@imperial.ac.uk', 'luis.garcia@polygonaltree.co.uk']
+License: GPL3
+Description: TODO
+Platform: UNKNOWN
